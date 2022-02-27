@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyperops</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gluten&display=swap" rel="stylesheet">
+<link rel="stylesheety" href="style.css">
+<style>
+    body{
+        font-family: 'Gluten', cursive;
+        color: black;
+        margin:0px;
+        padding:0px;
+        background: url('IMG_20220226_191146_006[779].jpg');
+        width:1000px ;
+    }
+    .left{
+        display: inline-block;
+        position: absolute;
+        left: 34px;
+        top: 20px;
+
+    }
+    
+    .left img{
+        width: 80px;
+    }
+    .right{
+        position: absolute;
+        right: 34px;
+        top: 20px;
+        display: inline-block;
+
+    }
+    .mid{
+        display:block;
+        width:80%;
+        margin: 20px auto;
+    }
+    .mid img{
+        width: 30px;
+    }
+    
+    .navbar{
+        display: inline-block;
+    }
+    .navbar li{
+        color:whitesmoke;
+        display:inline-block;
+    }
+    .navbar li a{
+        color:whitesmoke;
+        text-decoration: white;
+        padding: 34px 23px ;
+    }
+    .navga{
+        display: inline-block;
+    }
+    .navga li{
+        color:whitesmoke;
+        display:inline-block;
+    }
+    .navga li a{
+        color:whitesmoke;
+        text-decoration: white;
+        padding: 34px 23px ;
+    }
+    .container{
+        margin:56px 78px;
+        width: 100%;
+        display:flex;
+        flex-wrap:wraps ;
+
+    }
+    .item{
+        border-radius: 19px;
+        box-sizing: border-box;
+        margin: 100px 130px;
+        padding: 100px;
+        width:50%;
+        height:80%;
+        
+       
+        transition-property: background-color ;
+        transition:all 1s ease-in-out 0.3s;
+    }
+    .item:hover{
+        background-color: silver;
+        transform:scale(2);
+    }
+    
+    .rotate img{
+        animation: got 3s linear infinite;
+    }
+    @keyframes got{
+        0% {transform: rotate(0);}
+        100% {transform: rotate(360deg);}
+
+    }
+    :root {
+	--f-border-radius: 0.98rem;
+	--f-orange: black;
+	--f-red: whitesmoke;
+	--f-rotated: 45deg;
+	--f-size: 4.25rem;
+	--f-animation-duration: 0.55s;
+	--f-animation-name: vibrate;
+	--f-animation-delay: 0.25s;
+}
+
+
+
+.container {
+	align-items: left;
+	display: flex;
+	justify-content: left;
+	height: 100vh;
+}
+
+.corpus {
+	position: absolute;
+	transform: rotate(var(--f-rotated));
+}
+
+.diamond {
+	background-color: var(--f-red);
+	background-image: linear-gradient(
+		195deg,
+		var(--f-red) 0%,
+		var(--f-orange) 74%
+	);
+	border-radius: var(--f-border-radius);
+	height: var(--f-size);
+	width: var(--f-size);
+}
+
+.diamond-inner {
+	position: relative;
+	animation: var(--f-animation-name) var(--f-animation-duration) ease-in
+		var(--f-animation-delay) alternate-reverse infinite;
+}
+
+.diamond-right {
+	--f-animation-duration: 0.95s;
+	--f-size: 5.25rem;
+
+	right: -35px;
+	top: -45px;
+}
+
+.diamond-left {
+	--f-animation-delay: 0.55s;
+	--f-size: 4.25rem;
+
+	right: 5px;
+	top: -25px;
+}
+
+.diamond-inner::after {
+	animation: var(--f-animation-name) var(--f-animation-duration) ease-in
+		var(--f-animation-delay) alternate-reverse infinite;
+	background-image: linear-gradient(
+		195deg,
+		var(--f-red) 0%,
+		var(--f-orange) 74%
+	);
+	border-radius: 1.00rem;
+	content: '';
+	display: block;
+	height: 4.25rem;
+	width: 5.25rem;
+    position: center;
+    right: -25px;
+    top: -65px;
+}
+
+
+.diamond-right.diamond-inner::after {
+    top: -25px;
+    width: 0.90rem;
+    height: 0.90rem;
+}
+
+@keyframes vibrate {
+	to {
+		transform: scale(1.25) translate(20px, 30px);
+	}
+}
+.choice {
+  height: 400px;
+  display: inline-block;
+  width: 100px;
+}
+
+.result {
+  height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bar {
+  height: 0%;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.bar[data-choice="1"] {
+  background-color: red;
+}
+
+.bar[data-choice="2"] {
+  background-color: green;
+}
+
+.bar[data-choice="3"] {
+  background-color: blue;
+}
+
+.label {
+  height: 70px;
+  text-align: center;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #4a4a4d;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+th,
+td {
+  padding: 10px 15px;
+  vertical-align: middle;
+}
+thead {
+  background: #395870;
+  color: #fff;
+}
+th:first-child {
+  text-align: left;
+}
+tbody tr:nth-child(even) {
+  background: #f0f0f2;
+}
+td {
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+td:first-child {
+  border-left: 1px solid #cecfd5;
+}
+.book-title {
+  color: #395870;
+  display: block;
+}
+.item-stock,
+.item-qty {
+  text-align: center;
+}
+.item-price {
+  text-align: right;
+}
+.item-multiple {
+  display: block;
+}
+tfoot {
+  text-align: right;
+}
+tfoot tr:last-child {
+  background: #f0f0f2;
+}
+    
+
+   
+    
+</style>
+
+<body>
+    <script>
+        let num= prompt("please enter 1 if you wish to cancel and 0 to continue");
+        if(num=1){
+            alert("food cancelled")
+        }
+        else alert("kindly scan qr at booth")
+
+    </script>
+    <header class ="header">
+        <div class="mid">
+            <ul class ="navbar">
+                <li><a href="fugaku4.html">Home</a></li>
+                <li><a href="fugaku2.html" target="_blank">Booking</a></li>
+                <li><a href="QR SCANNER.html" target="_blank"> QR code</a></li>
+                
+            </ul>
+        </div>
+        <div class="left">
+            <img src="pngwing.com (2)[781].png">
+        </div>
+        <div class = "right">
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div>
+                 <br> Please vote
+                </div>
+                
+              
+             <ul class="navga">
+             
+        </div>
+
+    </header>
+    <h1 style=font-size:100px> <h1 style="text-align:right;">FUGAKU F<span class="rotate img"><img src="toppng.com-transparent-background-infinity-sign-588x275[783].png">D</span></h1></h1>
+    <div class = "container"> <div class="item" id="item1"><h1>POLLING</h1><br>
+        <div id="choices">
+            <div class="choice">
+              <div class="result">
+                <div class="bar" data-choice="1"></div>
+              </div>
+              <div class="label">
+                <p>Will eat</p>
+                <button data-choice="1">Vote</button>
+              </div>
+            </div>
+            <div class="choice">
+              <div class="result">
+                <div class="bar" data-choice="2"></div>
+              </div>
+              <div class="label">
+                <p>Will not eat</p>
+                <button data-choice="2">Vote</button>
+              </div>
+            </div>
+            <div class="choice">
+              <div class="result">
+                <div class="bar" data-choice="3"></div>
+              </div>
+              <div class="label">
+                <p>Not decided</p>
+                <button data-choice="3">Vote</button>
+              </div>
+            </div>
+          </div>
+          <script>
+              var buttons = document.querySelectorAll(".choice button"),
+tally = {
+1: 0,
+2: 0,
+3: 0,
+total: 0
+};
+
+function vote(choice) {
+tally[choice]++;
+tally["total"]++;
+console.log(tally);
+}
+
+function barPercentage(node, tally) {
+var choice = node.dataset.choice;
+
+if (tally[choice])
+return tally[choice]/tally["total"] * 100;
+return 0;
+}
+
+function renderBars() {
+var bars = document.getElementsByClassName("bar");
+
+for (var i = 0; i < bars.length; i++) {
+var percentage = barPercentage(bars[i], tally);
+console.log(percentage)
+bars[i].style.height = percentage.toString() + "%";
+}
+}
+
+function setup() {
+// Set up event listeners
+for (var i = 0; i < buttons.length; i++) {
+buttons[i].addEventListener("click", function(e) {
+  vote(e.target.dataset["choice"]);
+  renderBars();
+});
+}
+
+renderBars();
+}
+
+setup();
+          </script>
+        
+        </div>
+        
+           <div class= "item" id ="item2"> <span></span><span></span>
+            <div class="corpus diamond">
+                <div class="diamond diamond-inner diamond-right"></div>
+                <div class="diamond diamond-inner diamond-left"></div>
+        </div></div>
+        <div class ="item">
+            <table>
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">ITEM</th>
+                    <th scope="col">Initial </th>
+                    <th scope="col">final</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong class="book-title">credits at start of semester
+                    </td>
+                    <td class="item-stock">available</td>
+                    <td class="item-qty">0</td>
+                    <td class="item-price">0</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong class="book-title">current credits</strong>
+                    </td>
+                    <td class="item-stock">available</td>
+                    <td class="item-qty">23</td>
+                    <td class="item-price">23</span></td>
+                  </tr>
+                  
+                </tfoot>
+              </table>
+
+        </div>
+        
+            
+         
+
+        </div>
+        
+
+        
+        </div>
+       
+
+</body>
+<body>
+    
+</body>
+</html>
